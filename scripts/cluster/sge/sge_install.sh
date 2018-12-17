@@ -23,19 +23,17 @@ initiate_master()
         HOSTNAME=machine-$ID
         echo $HOSTIP $HOSTNAME |  tee -a /etc/hosts
     fi
-    if [ "$(ss-get $component_vpn_name:edugain.enable)" == "false" ] ; then
-        ssh_root=/root/.ssh
-        ssh_user=/home/$USER_NEW/.ssh
-        if [ ! -f $ssh_user/authorized_keys ]; then
-            mkdir -p $ssh_user
-            touch $ssh_user/authorized_keys
-            chmod 700 $ssh_user
-            chmod 600 $ssh_user/authorized_keys
-            chown $USER_NEW:$USER_NEW $ssh_user/authorized_keys
-        fi
-        cat $ssh_root/authorized_keys >> $ssh_user/authorized_keys
-        msg_info "ssh key of root imported to $USER_NEW."
+    ssh_root=/root/.ssh
+    ssh_user=/home/$USER_NEW/.ssh
+    if [ ! -f $ssh_user/authorized_keys ]; then
+        mkdir -p $ssh_user
+        touch $ssh_user/authorized_keys
+        chmod 700 $ssh_user
+        chmod 600 $ssh_user/authorized_keys
+        chown $USER_NEW:$USER_NEW $ssh_user/authorized_keys
     fi
+    cat $ssh_root/authorized_keys >> $ssh_user/authorized_keys
+    msg_info "ssh key of root imported to $USER_NEW."
     HOSTNAME=$(echo $HOSTNAME | sed "s|_|-|g")
     echo "$HOSTNAME" > /etc/hostname
     hostname $HOSTNAME
