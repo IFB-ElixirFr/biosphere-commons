@@ -229,15 +229,7 @@ install_edugain_ubuntu16()
         fi
     else
         populate_hosts_with_components_name_and_ips hostname
-    fi   
-
-#    if [ "$OPENSTACK_HOSTNAME" == "" ]; then
-#        echo $(hostname -I | sed 's/ /\n/g' | head -n 1) > /etc/hostname
-#    else
-#        echo $OPENSTACK_HOSTNAME > /etc/hostname
-#    fi
-
-    #hostname -F /etc/hostname
+    fi
 
     if [ "$(ss-get cloudservice)" == "cyclone-fr2" ]; then
         # set the service url to SSH url
@@ -388,20 +380,13 @@ check_ip()
 
 check_ip_slave_for_master()
 {
-    if isubuntu; then
-        USER_NEW="$(ss-get edugain_username)"
-    fi
-    
     url="ssh://$USER_NEW@$PUBLIC_IP"
-    #ss-set url.ssh "${url}"
     ss-set url.service "${url}"
     ss-set ss:url.service "${url}"
     
     for (( i=1; i <= $(ss-get $SLAVE_NAME:multiplicity); i++ )); do
         msg_info "Waiting ip of slave to be ready."
         ss-get --timeout=3600 $SLAVE_NAME.$i:ip.ready
-        #url=$(ss-get $SLAVE_NAME.$i:url.ssh)
-        #PUBLIC_SLAVE_IP=$(echo $url | cut -d "@" -f2)
         PUBLIC_SLAVE_IP=$(ss-get $SLAVE_NAME.$i:$IP_PARAMETER)
         SLAVE_IP=$(ss-get $SLAVE_NAME.$i:ip.ready)
         sed -i "s|$PUBLIC_SLAVE_IP|$SLAVE_IP|g" /etc/hosts
@@ -413,7 +398,6 @@ check_ip_master_for_slave()
     msg_info "Waiting ip of master to be ready."
     ss-get --timeout=3600 $MASTER_HOSTNAME:ip.ready
     url=$(ss-get $MASTER_HOSTNAME:url.service)
-    #PUBLIC_IP_MASTER=$(echo $url | cut -d "@" -f2)
     PUBLIC_IP_MASTER=$(ss-get $MASTER_HOSTNAME:$IP_PARAMETER)
     MASTER_IP=$(ss-get $MASTER_HOSTNAME:ip.ready)
     sed -i "s|$PUBLIC_IP_MASTER|$MASTER_IP|g" /etc/hosts

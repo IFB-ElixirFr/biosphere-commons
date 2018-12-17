@@ -3,7 +3,9 @@ source /scripts/cluster/cluster_install.sh
 initiate_master()
 {
     check_if_vpn_or_not
-    
+
+    user_add
+
     ID=1
     SGE_ROOT_DIR=/tmp/sge
     mkdir -p $SGE_ROOT_DIR
@@ -50,6 +52,8 @@ initiate_master()
 initiate_slave()
 {
     check_if_vpn_or_not
+
+    user_add
     
     ID=1
     
