@@ -99,6 +99,7 @@ default_type application/octet-stream;
 # See http://nginx.org/en/docs/ngx_core_module.html#include
 # for more information.
 include /etc/nginx/conf.d/*.conf;
+client_max_body_size 0;
 }
 EOF
 
@@ -130,3 +131,7 @@ proxy_set_header Host $host;
 }
 EOF
 sed -i "s|example.com|$host_ip|" /etc/nginx/conf.d/my-site.conf
+
+systemctl restart nginx
+systemctl enable nginx
+echo "Nginx configured."
