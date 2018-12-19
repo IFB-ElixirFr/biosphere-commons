@@ -469,8 +469,8 @@ add_nodes() {
         #ss-get $INSTANCE_NAME:ready
         
         if [ $IP_PARAMETER == "hostname" ]; then
-            ss-get --timeout=3600 $INSTANCE_NAME:net.services.enable
-            ss-set $INSTANCE_NAME:net.services.enable "[]"
+#            ss-get --timeout=3600 $INSTANCE_NAME:net.services.enable
+#            ss-set $INSTANCE_NAME:net.services.enable "[]"
             ss-get --timeout=3600 $INSTANCE_NAME:ip.ready
             PUBLIC_SLAVE_IP=$(ss-get $INSTANCE_NAME:$IP_PARAMETER)
             SLAVE_IP=$(ss-get $INSTANCE_NAME:ip.ready)
