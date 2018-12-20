@@ -59,6 +59,10 @@ check_if_vpn_or_not()
 initiate_master_cluster()
 {
     check_if_vpn_or_not
+
+    user_add
+
+    user_sudoers
     
     ID=1
     
@@ -93,7 +97,11 @@ initiate_master_cluster()
 initiate_slave_cluster()
 {
     check_if_vpn_or_not
-    
+
+    user_add
+
+    user_sudoers
+
     ID=1
     
     if [ "$category" != "Deployment" ]; then
