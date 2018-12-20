@@ -62,11 +62,24 @@ config_elasticluster(){
         echo "This function expects a type of cluster in argument (slurm)!"
     else 
         cluster_type=$1
+         
+        check_if_vpn_or_not        
     
         #master
-        MASTER_HOSTNAME= $(ss-get master.nodename)
+        MASTER_HOSTNAME=master
 
-        MASTER_IP=$(ss-get --timeout=3600 $MASTER_HOSTNAME:private_ip)
+        if [ $IP_PARAMETER == "hostname" ]; then
+            msg_info "Waiting ip of master to be ready."
+            ss-get --timeout=3600 $MASTER_HOSTNAME:ip.ready
+            #NETWORK_MODE=$(ss-get $MASTER_HOSTNAME:network)
+            #if [ "$NETWORK_MODE" == "Public" ]; then
+            #    MASTER_IP=$(ss-get $MASTER_HOSTNAME:$IP_PARAMETER)
+            #else
+                MASTER_IP=$(ss-get $MASTER_HOSTNAME:ip.ready)
+                #fi
+        else
+            MASTER_IP=$(ss-get $MASTER_HOSTNAME:vpn.address)
+        fi
     
         ansible_user=root
         host_master=$MASTER_HOSTNAME-1
@@ -92,9 +105,20 @@ config_elasticluster(){
             echo "[slurm_worker]" >> $playbook_dir/hosts
         fi
         
-        SLAVE_NAME= $(ss-get slave.nodename)
+        SLAVE_NAME=slave
         for (( i=1; i <= $(ss-get slave:multiplicity); i++ )); do
-            SLAVE_IP=$(ss-get $SLAVE_NAME.$i:private_ip)
+            if [ $IP_PARAMETER == "hostname" ]; then
+                msg_info "Waiting ip of slave to be ready."
+                ss-get --timeout=3600 $SLAVE_NAME.$i:ip.ready
+                #NETWORK_MODE=$(ss-get $SLAVE_NAME.$i:network)
+                #if [ "$NETWORK_MODE" == "Public" ]; then
+                #    SLAVE_IP=$(ss-get $SLAVE_NAME.$i:$IP_PARAMETER)
+                #else
+                    SLAVE_IP=$(ss-get $SLAVE_NAME.$i:ip.ready)
+                    #fi
+            else
+                SLAVE_IP=$(ss-get $SLAVE_NAME.$i:vpn.address)
+            fi    
             host_slave=$SLAVE_NAME-$i
             
             NB_RAM_GO=$(ss-get $SLAVE_NAME.$i:ram.GB)
