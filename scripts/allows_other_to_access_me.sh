@@ -1,7 +1,7 @@
 check_json_tool_shed(){
     if [ ! -e /scripts/json_tool_shed.py ]; then
         mkdir -p /scripts/
-        wget https://github.com/cyclone-project/usecases-hackathon-2016/blob/master/scripts/json_tool_shed.py  -O /scripts/json_tool_shed.py
+        wget https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/json_tool_shed.py  -O /scripts/json_tool_shed.py
         chmod a+rx -R /scripts/
     fi
 }
