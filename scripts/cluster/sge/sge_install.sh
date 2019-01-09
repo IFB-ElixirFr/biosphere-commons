@@ -328,7 +328,7 @@ Config_SGE_master()
     qconf -Msconf $SGE_ROOT_DIR/grid
     rm $SGE_ROOT_DIR/grid
     
-    wget -O $SGE_ROOT_DIR/complex.conf https://github.com/cyclone-project/usecases-hackathon-2016/raw/master/scripts/cluster/sge/complex.conf
+    wget -O $SGE_ROOT_DIR/complex.conf https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/cluster/sge/complex.conf
 	qconf -Mc $SGE_ROOT_DIR/complex.conf
     
     # create a host list
