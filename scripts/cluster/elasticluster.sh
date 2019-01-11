@@ -158,7 +158,7 @@ install_playbooks(){
             #memory_master=$(ssh master 'echo $(($(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE) / (1024 * 1024)))')
             #vcpu_master=$(ssh master 'nproc')
             rm -f $playbook_dir/roles/slurm.yml
-            wget -O $playbook_dir/roles/slurm.yml https://github.com/cyclone-project/usecases-hackathon-2016/raw/master/scripts/cluster/slurm/slurm.yml
+            wget -O $playbook_dir/roles/slurm.yml https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/cluster/slurm/slurm.yml
 
             ansible-playbook -M $playbook_dir/library -i $playbook_dir/hosts $playbook_dir/roles/slurm.yml
             #ansible-playbook -M $playbook_dir/library -i $playbook_dir/hosts --extra-vars "pkg_install_state='present' __at__='='" $playbook_dir/roles/slurm.yml

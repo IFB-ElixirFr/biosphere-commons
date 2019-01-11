@@ -132,12 +132,12 @@ Install_SGE_master()
         yum install -y https://arc.liv.ac.uk/downloads/SGE/releases/$sge_version/gridengine-execd-$sge_version-1.el6.x86_64.rpm
         #yum install -y https://arc.liv.ac.uk/downloads/SGE/releases/$sge_version/gridengine-debuginfo-$sge_version-1.el6.x86_64.rpm
         
-        #wget -O /opt/sge/util/install_modules/inst_ifb.conf https://github.com/cyclone-project/usecases-hackathon-2016/raw/master/scripts/cluster/sge/inst_ifb.conf
+        #wget -O /opt/sge/util/install_modules/inst_ifb.conf https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/cluster/sge/inst_ifb.conf
         
     	cd /opt/sge
     	./inst_sge -m -auto util/install_modules/inst_template.conf
     	. /opt/sge/default/common/settings.sh
-        wget -O /etc/profile.d/sge_lib.sh https://github.com/cyclone-project/usecases-hackathon-2016/raw/master/scripts/cluster/sge/sge_lib.sh
+        wget -O /etc/profile.d/sge_lib.sh https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/cluster/sge/sge_lib.sh
         msg_info "SGE is installed."
         message_at_boot_master_sge        
     elif isubuntu; then
@@ -196,7 +196,7 @@ Install_SGE_slave()
         cd /opt/sge
         . /opt/sge/default/common/settings.sh         
         ./inst_sge -x -auto util/install_modules/inst_template.conf
-        wget -O /etc/profile.d/sge_lib.sh https://github.com/cyclone-project/usecases-hackathon-2016/raw/master/scripts/cluster/sge/sge_lib.sh
+        wget -O /etc/profile.d/sge_lib.sh https://raw.githubusercontent.com/IFB-ElixirFr/biosphere-commons/master/scripts/cluster/sge/sge_lib.sh
     elif isubuntu; then   
         echo "gridengine-common       shared/gridenginemaster string  $MASTER_HOSTNAME_SAFE" |  debconf-set-selections
         echo "gridengine-common       shared/gridenginecell   string  default" |  debconf-set-selections
