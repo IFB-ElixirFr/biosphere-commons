@@ -24,7 +24,11 @@ def config_shares(data_manila_export, src_dir="/var/autofs/ifb", dst_dir="/ifb/d
         src = src_dir + "/" + k
         dst = dst_dir + "/" + k
         os.symlink(src, dst)
-        ifb_manila_file.write(k + " -fstype=" + v['protocol'] + "," + v['access_level'] + " " + v['endpoint'] + "\n")
+        if 'opts' in v.keys() and v['opts']:
+            params = "-fstype=" + v['protocol'] + "," + v['access_level'] + "," + v['opts']
+        else:
+            params = "-fstype=" + v['protocol'] + "," + v['access_level']
+        ifb_manila_file.write(k + " " + params + " " + v['endpoint'] + "\n")
     ifb_manila_file.close()
     Popen(['service', 'autofs', 'restart'])
 
