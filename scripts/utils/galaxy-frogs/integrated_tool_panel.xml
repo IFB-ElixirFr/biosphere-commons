@@ -245,7 +245,7 @@
 
     </section>
 
-    <section id="FROGS" name="FROGS" version="">
+    <section id="frogs" name="FROGS" version="">
 
         <label text="OTUs reconstruction" id="FROGS_OTU" version="" />
 
