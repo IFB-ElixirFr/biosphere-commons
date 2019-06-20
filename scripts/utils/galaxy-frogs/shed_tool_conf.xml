@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<toolbox tool_path="../shed_tools">
+    <section id="frogs" name="FROGS" version="">
+        <label text="OTUs reconstruction" id="FROGS_OTU" />
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/demultiplex.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_demultiplex/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_demultiplex/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/preprocess.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_preprocess/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_preprocess/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/clustering.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_clustering/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_clustering/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/remove_chimera.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_remove_chimera/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_remove_chimera/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/filters.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_filters/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_filters/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/itsx.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_itsx/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_itsx/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/affiliation_OTU.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_OTU/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_OTU/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/affiliation_postprocess.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_postprocess/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_postprocess/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/normalisation.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_normalisation/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_normalisation/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/tree.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/clusters_stat.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_clusters_stat/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_clusters_stat/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/affiliations_stat.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliations_stat/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliations_stat/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/biom_to_stdBiom.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_biom_to_stdBiom/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_biom_to_stdBiom/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/biom_to_tsv.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_biom_to_tsv/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_biom_to_tsv/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/tsv_to_biom.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_tsv_to_biom/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_tsv_to_biom/3.1</id>
+            <version>3.1</version>
+        </tool>
+
+        <label text="OTUs structure and composition analysis" id="FROGSSTAT_Phyloseq" />
+
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_import_data.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Import_Data/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Import_Data/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_composition.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Composition_Visualisation/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Composition_Visualisation/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_alpha_diversity.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Alpha_Diversity/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Alpha_Diversity/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_beta_diversity.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Beta_Diversity/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Beta_Diversity/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_clustering.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Sample_Clustering/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Sample_Clustering/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_structure.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Structure_Visualisation/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Structure_Visualisation/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/59bc96331073/frogs_3_1_0/r_manova.xml" guid="toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Multivariate_Analysis_Of_Variance/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>frogs_3_1_0</repository_name>
+            <repository_owner>frogs</repository_owner>
+            <installed_changeset_revision>59bc96331073</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGSSTAT_Phyloseq_Multivariate_Analysis_Of_Variance/3.1</id>
+            <version>3.1</version>
+        </tool>
+    </section>
+</toolbox>
