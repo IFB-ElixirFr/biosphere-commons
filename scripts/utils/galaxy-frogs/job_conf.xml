@@ -982,6 +982,36 @@
         <expand macro="foohost_destination" id="foo_medium" ncpus="2" walltime="4:00:00" />
         <expand macro="foohost_destination" id="foo_large" ncpus="8" walltime="24:00:00" />
         <expand macro="foohost_destination" id="foo_longrunning" ncpus="1" walltime="48:00:00" />
+    <destination id="FROGS_preprocess_job" runner="drmaa">
+		<param id="galaxy_external_runjob_script">scripts/drmaa_external_runner.py</param>
+		<param id="galaxy_external_killjob_script">scripts/drmaa_external_killer.py</param>
+		<param id="galaxy_external_chown_script">scripts/external_chown_script.py</param>
+		<param id="nativeSpecification">-clear -q galaxyq -l mem=5G -l h_vmem=13G -pe parallel_smp 12</param>
+	</destination>
+	<destination id="FROGS_clustering_job" runner="drmaa">
+		<param id="galaxy_external_runjob_script">scripts/drmaa_external_runner.py</param>
+		<param id="galaxy_external_killjob_script">scripts/drmaa_external_killer.py</param>
+		<param id="galaxy_external_chown_script">scripts/external_chown_script.py</param>
+		<param id="nativeSpecification">-clear -q galaxyq -l mem=3G -l h_vmem=10G -pe parallel_smp 16</param>
+	</destination>
+	<destination id="FROGS_remove_chimera_job" runner="drmaa">
+		<param id="galaxy_external_runjob_script">scripts/drmaa_external_runner.py</param>
+		<param id="galaxy_external_killjob_script">scripts/drmaa_external_killer.py</param>
+		<param id="galaxy_external_chown_script">scripts/external_chown_script.py</param>
+		<param id="nativeSpecification">-clear -q galaxyq -l mem=3G -l h_vmem=4G -pe parallel_smp 12</param>
+	</destination>
+	<destination id="FROGS_itsx_job" runner="drmaa">
+		<param id="galaxy_external_runjob_script">scripts/drmaa_external_runner.py</param>
+		<param id="galaxy_external_killjob_script">scripts/drmaa_external_killer.py</param>
+		<param id="galaxy_external_chown_script">scripts/external_chown_script.py</param>
+		<param id="nativeSpecification">-clear -q galaxyq -l mem=3G -l h_vmem=4G -pe parallel_smp 12</param>
+	</destination>
+	<destination id="FROGS_affiliation_OTU_job" runner="drmaa">
+		<param id="galaxy_external_runjob_script">scripts/drmaa_external_runner.py</param>
+		<param id="galaxy_external_killjob_script">scripts/drmaa_external_killer.py</param>
+		<param id="galaxy_external_chown_script">scripts/external_chown_script.py</param>
+		<param id="nativeSpecification">-clear -q galaxyq -l mem=7G -l h_vmem=10G -pe parallel_smp 30</param>
+	</destination>
     </destinations>
     <resources default="default">
       <!-- Group different parameters defined in job_resource_params_conf.xml
@@ -1011,6 +1041,11 @@
              the container of choice in Kubernetes.
         -->
         <tool id="my-tool" destination="my-tool-container"/>
+        <tool id="FROGS_preprocess" destination="FROGS_preprocess_job"/>
+        <tool id="FROGS_clustering" destination="FROGS_clustering_job"/>
+        <tool id="FROGS_remove_chimera" destination="FROGS_remove_chimera_job"/>
+        <tool id="FROGS_itsx" destination="FROGS_itsx_job"/>
+        <tool id="FROGS_affiliation_OTU" destination="FROGS_affiliation_OTU_job"/>
     </tools>
     <limits>
         <!-- Certain limits can be defined. The 'concurrent_jobs' limits all
