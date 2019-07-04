@@ -76,15 +76,13 @@ config_elasticluster(){
         NB_RAM_GO=$(ss-get $MASTER_HOSTNAME:ram.GB)
         memory_master=$(echo $(($NB_RAM_GO * 1000)))
         vcpu_master=$(ss-get $MASTER_HOSTNAME:cpu.nb)
-    
-        echo "---" > $playbook_dir/hosts
         
         if [ $cluster_type == "slurm" ]; then
             msg_info "Configuring slurm hosts."
             #FIX controlmachine
             sed -i "s|ControlMachine=.*|ControlMachine="$host_master"|" $playbook_dir/roles/slurm-common/templates/slurm.conf.j2
     
-            echo "[slurm_master]" >> $playbook_dir/hosts
+            echo "[slurm_master]" > $playbook_dir/hosts
             echo "$host_master ansible_user=$ansible_user SLURM_ACCOUNTING_HOST=$host_master ansible_memtotal_mb=$memory_master ansible_processor_vcpus=$vcpu_master"  >> $playbook_dir/hosts
         fi
     
