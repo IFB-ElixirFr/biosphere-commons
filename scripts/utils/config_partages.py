@@ -21,14 +21,18 @@ def config_shares(data_manila_export, src_dir="/var/autofs/ifb", dst_dir="/ifb/d
 
     ifb_manila_file = open("/etc/auto.ifb_share", "w")
     for k, v in data.items():
-        src = src_dir + "/" + k
-        dst = dst_dir + "/" + k
-        os.symlink(src, dst)
-        if 'opts' in v.keys() and v['opts']:
-            params = "-fstype=" + v['protocol'] + "," + v['access_level'] + "," + v['opts']
+        if k == "ifb_proxy_enabled":
+            with open('/etc/profile.d/ifb.sh', 'a') as ifb_file:
+                ifb_file.write('export ifb_proxy_enabled="true"')
         else:
-            params = "-fstype=" + v['protocol'] + "," + v['access_level']
-        ifb_manila_file.write(k + " " + params + " " + v['endpoint'] + "\n")
+            src = src_dir + "/" + k
+            dst = dst_dir + "/" + k
+            os.symlink(src, dst)
+            if 'opts' in v.keys() and v['opts']:
+                params = "-fstype=" + v['protocol'] + "," + v['access_level'] + "," + v['opts']
+            else:
+                params = "-fstype=" + v['protocol'] + "," + v['access_level']
+            ifb_manila_file.write(k + " " + params + " " + v['endpoint'] + "\n")
     ifb_manila_file.close()
     Popen(['service', 'autofs', 'restart'])
 
