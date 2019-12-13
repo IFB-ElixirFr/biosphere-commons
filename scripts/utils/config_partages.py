@@ -22,8 +22,8 @@ def config_shares(data_manila_export, src_dir="/var/autofs/ifb", dst_dir="/ifb/d
     ifb_manila_file = open("/etc/auto.ifb_share", "w")
     for k, v in data.items():
         if k == "ifb_proxy_enabled":
-            with open('/etc/profile.d/ifb.sh', 'a') as ifb_file:
-                ifb_file.write('export ifb_proxy_enabled="true"')
+            with open('/etc/profile.d/ifb.sh', 'a') as ifb_profile:
+                ifb_profile.write("export IFB_PROXY_ENABLED=True\n")
         else:
             src = src_dir + "/" + k
             dst = dst_dir + "/" + k
