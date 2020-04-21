@@ -80,7 +80,7 @@ config_elasticluster(){
         if [ $cluster_type == "slurm" ]; then
             msg_info "Configuring slurm hosts."
             #FIX controlmachine
-            sed -i "s|ControlMachine=.*|ControlMachine="$host_master"|" $playbook_dir/roles/slurm-common/templates/slurm.conf.j2
+            sed -i "s|ControlMachine=.*|ControlMachine="$host_master"|; s|PartitionName=main|PartitionName=normal|" $playbook_dir/roles/slurm-common/templates/slurm.conf.j2
     
             echo "[slurm_master]" > $playbook_dir/hosts
             echo "$host_master ansible_user=$ansible_user SLURM_ACCOUNTING_HOST=$host_master ansible_memtotal_mb=$memory_master ansible_processor_vcpus=$vcpu_master"  >> $playbook_dir/hosts
