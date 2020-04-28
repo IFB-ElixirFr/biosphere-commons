@@ -43,7 +43,6 @@ install_elasticluster(){
 
 install_ansible(){
     msg_info "Installing ansible playbook."
-    pip3 install cryptography==1.5
     pip3 install ansible
 
     ansible_dir="/etc/ansible"
